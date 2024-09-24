@@ -9,6 +9,7 @@ import { LoginComponent } from './authe/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -23,11 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
 
-    
+
   ],
   bootstrap: [AppComponent]
 })

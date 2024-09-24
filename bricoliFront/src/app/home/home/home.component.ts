@@ -20,14 +20,24 @@ export class HomeComponent implements OnInit {
     { id: 6, description: "Informations sur le service proposé par le client" },
   ];
 
+  filteredServices: Service[] = [];
+  searchTerm: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
-    // Ici, vous pourriez charger les services depuis une API
+    this.filteredServices = this.services;
+  }
+
+  onSearch(): void {
+    this.filteredServices = this.services.filter(service =>
+      service.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
   handleDelete(id: number): void {
     this.services = this.services.filter(service => service.id !== id);
+    this.onSearch(); // Refilter the services after deletion
   }
 
   handleConfirm(id: number): void {

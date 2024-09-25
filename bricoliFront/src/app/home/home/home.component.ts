@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServiceModelServiceService } from 'src/app/Services/service-model-service.service';
+import { ModelService } from 'src/app/models/ModelService';
 
 interface Service {
   id: number;
@@ -11,37 +14,34 @@ interface Service {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  services: Service[] = [
-    { id: 1, description: "Informations sur le service proposé par le client" },
-    { id: 2, description: "Informations sur le service proposé par le client" },
-    { id: 3, description: "Informations sur le service proposé par le client" },
-    { id: 4, description: "Informations sur le service proposé par le client" },
-    { id: 5, description: "Informations sur le service proposé par le client" },
-    { id: 6, description: "Informations sur le service proposé par le client" },
-  ];
+  modelService: ModelService[] = [];
+  errorMessage: string = '';
+nomProjet: string | undefined;
 
-  filteredServices: Service[] = [];
-  searchTerm: string = '';
 
-  constructor() { }
+  constructor(private serviceModelservice: ServiceModelServiceService,
+              private router: Router ) {}
+
 
   ngOnInit(): void {
-    this.filteredServices = this.services;
-  }
+          this.loadServiceModel();
+                  }
 
-  onSearch(): void {
-    this.filteredServices = this.services.filter(service =>
-      service.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+
+  loadServiceModel(): void {
+    this.serviceModelservice.allProjets().subscribe(
+      (data: ModelService[]) => {
+        this.modelService = data;
+        console.log(data);
+
+      },
+      (error: any) => {
+        console.error('Erreur lors de la récupération des projets', error);
+        this.errorMessage = 'Une erreur est survenue lors du chargement des projets.';
+      }
     );
   }
+            
 
-  handleDelete(id: number): void {
-    this.services = this.services.filter(service => service.id !== id);
-    this.onSearch(); // Refilter the services after deletion
-  }
-
-  handleConfirm(id: number): void {
-    // Implémentez la logique de confirmation ici
-    console.log(`Service ${id} confirmé`);
-  }
 }
+

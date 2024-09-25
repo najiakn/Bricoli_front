@@ -18,5 +18,6 @@ export interface ModelService {
   typePaiement: TypePaiement;
   typeService: TypeService;
   
+  
 
 }

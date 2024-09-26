@@ -1,7 +1,5 @@
 import { Categorie } from "./Categorie";
-import { Client } from "./Clinet";
 import { EtatService } from "./Etat_service";
-import { Prestataire } from "./Prestataire";
 import { TypePaiement } from "./TypePaiement";
 import { TypeService } from "./TypeService";
 
@@ -17,7 +15,7 @@ export interface ModelService {
   categorie: Categorie;
   typePaiement: TypePaiement;
   typeService: TypeService;
-  
+  imageUrl: string;
   
 
 }

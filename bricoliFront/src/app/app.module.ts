@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LanceSvComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ export class ServiceModelServiceService {
 
   allProjets(): Observable<ModelService[]> {
     const headers = this.createAuthorizationHeader();
-    return this.http.get<ModelService[]>(`${this.apiUrl}/all`,{ headers: headers || {} });
+    return this.http.get<ModelService[]>(`${this.apiUrl}/offre`,{ headers: headers || {} });
   }
 
 

@@ -27,6 +27,8 @@
   <aside class="w-64 bg-white shadow-md">
     <nav class="p-4">
       <ul class="space-y-2">
+        <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">Opportinites de prestation</a></li>
+
         <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Offres de Demande</a></li>
         <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Lancer un Service</a></li>
         <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Services Offerts</a></li>
@@ -41,7 +43,7 @@
 o    <h2 class="text-2xl font-bold mb-6">Opportunités de Prestations</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div *ngFor="let modelservice of modelService" class="bg-white p-4 rounded shadow">
-        <img [src]="modelservice.imageUrl" alt="Image {{modelservice.imageUrl}}" />
+        <img [src]="modelservice.imageUrl" alt="image de service " />
         <H3 classe="titreService">{{modelservice.titre}}</H3>
         <p class="mb-4">{{ modelservice.description }}</p>
         <div class="flex justify-between">

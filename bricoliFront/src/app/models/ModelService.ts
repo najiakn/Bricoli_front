@@ -1,4 +1,4 @@
-import { Categorie } from "./Categorie";
+import { Categorie } from "./categorie";
 import { EtatService } from "./Etat_service";
 import { TypePaiement } from "./TypePaiement";
 import { TypeService } from "./TypeService";
@@ -9,13 +9,11 @@ export interface ModelService {
   titre: string;
   description: string;
   prix: number;
-  image: string;
   dateCreation: Date;
   etatService: EtatService;
   categorie: Categorie;
   typePaiement: TypePaiement;
   typeService: TypeService;
-  imageUrl: string;
+  imageUrl?: string;
   
-
 }

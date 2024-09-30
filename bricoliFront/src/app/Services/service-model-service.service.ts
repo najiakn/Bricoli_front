@@ -3,12 +3,16 @@ import { Observable } from 'rxjs';
 import { ModelService } from 'src/app/models/ModelService';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TypeService } from '../models/TypeService';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceModelServiceService {
   private apiUrl = 'http://localhost:8083/api/services';
+  private apiTypeService = 'http://localhost:8083/api/typeServices';
+
+  // http://localhost:8083/api/services/create-service
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +35,25 @@ export class ServiceModelServiceService {
 
 
   }
+  createService(serviceDto: ModelService): Observable<ModelService> {
+  
+    return this.http.post<ModelService>(`${this.apiUrl}/create-type-service`, serviceDto);
+  }
+
+  
+   
+    // Ajouter l'en-tête Authorization (JWT)
+  
+  
+
+
+ 
+  getTypeServices(): Observable<TypeService[]> {
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });
+  }
 }
+
+
+

@@ -10,6 +10,8 @@ import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.c
 import { NgModule } from '@angular/core';
 import { RegisterComponent } from './register/register/register.component';
 import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
+import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
+import { CreatTypeServiceComponent } from './home/home/type-service/creat-type-service/creat-type-service.component';
 // Import ListServiceComponent here if it exists
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ListeServiceComponent } from './home/home/liste_service/list-service/li
     LoginComponent,
     RegisterComponent,
     LanceSvComponent,
-    ListeServiceComponent
+    ListeServiceComponent,
+    ListeTypeServiceComponent,
+    CreatTypeServiceComponent
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],
   imports: [

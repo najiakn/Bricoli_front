@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="form-container">
+      <input 
+        type="text" 
+        [(ngModel)]="newTypeName" 
+        placeholder="Nom du type de service" 
+        class="type-input"
+      >
+      <button (click)="addServiceType()" class="add-button">Ajouter ce type</button>
+    </div>
+    
+    <table class="type-table">
+      <thead>
+        <tr>
+          <th>nom de type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let type of serviceTypes">
+          <td>{{ type.nomType }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

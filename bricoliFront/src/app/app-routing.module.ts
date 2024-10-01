@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home/home.component';
 import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.component';
 import { CommonModule } from '@angular/common';
 import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
+import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'lancerService', component: LanceSvComponent},
   { path: 'listeService', component: ListeServiceComponent},
 
+  { path: 'listeTypeService', component: ListeTypeServiceComponent},
 
 
 ];

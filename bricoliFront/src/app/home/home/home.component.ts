@@ -29,7 +29,7 @@ nomProjet: string | undefined;
 
 
   loadServiceModel(): void {
-    this.serviceModelservice.allProjets().subscribe(
+    this.serviceModelservice.allServices().subscribe(
       (data: ModelService[]) => {
         this.modelService = data;
         console.log(data);

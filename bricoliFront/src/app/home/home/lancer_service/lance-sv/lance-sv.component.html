@@ -51,8 +51,8 @@
           <textarea id="description" formControlName="description" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
         </div>
         <div>
-          <label for="typeService" class="block text-sm font-medium text-gray-700">Type de service</label>
-          <select id="typeService" formControlName="typeService" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+          <label for="typeServices" class="block text-sm font-medium text-gray-700">Type de service</label>
+          <select id="typeServices" formControlName="idType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
             <option *ngFor="let type of typeServices" [value]="type.id">{{ type.nomType }}</option>
           </select>
         </div>

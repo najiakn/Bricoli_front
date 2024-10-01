@@ -17,7 +17,7 @@ export class ServiceModelServiceService {
   constructor(private http: HttpClient) { }
 
 
-  allProjets(): Observable<ModelService[]> {
+  allServices(): Observable<ModelService[]> {
     const headers = this.createAuthorizationHeader();
     return this.http.get<ModelService[]>(`${this.apiUrl}/offre`,{ headers: headers || {} });
   }
@@ -36,8 +36,9 @@ export class ServiceModelServiceService {
 
   }
   createService(serviceDto: ModelService): Observable<ModelService> {
-  
-    return this.http.post<ModelService>(`${this.apiUrl}/create-type-service`, serviceDto);
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.post<ModelService>(`${this.apiUrl}/create-service`, serviceDto,{ headers: headers || {} });
   }
 
   

@@ -24,15 +24,18 @@ export class LanceSvComponent implements OnInit {
     private fb: FormBuilder,
     private serviceService: ServiceModelServiceService,
    private   uploadService:UploadImage,
-   private route:Router
+   private route:Router,
   ) {
     this.serviceForm = this.fb.group({
       titre: ['', Validators.required],
       description: ['', Validators.required],
       prix: [0, [Validators.required, Validators.min(0)]],
-      typeService: ['', Validators.required],
+      idType: ['', Validators.required],
       typePaiement: [TypePaiement.EN_LIGNE, Validators.required],
-      imageUrl:['']
+      imageUrl: [''],
+      dateCreation: [Date.now()],
+      etatService: ['NON_ENCOUR'],
+      categorie: ['OFFRE'],
     });
   }
 
@@ -60,6 +63,7 @@ export class LanceSvComponent implements OnInit {
       formData.imageUrl = await this.uploadService.uploadImageToCloudinary(formData.imageUrl);
 
       console.log('Form Data after:', formData);
+      formData
 
       this.serviceService.createService(formData).subscribe(
         data => {

@@ -1,17 +1,16 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './authe/login/login.component';
-import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from './register/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Combined import
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.component';
-
+import { NgModule } from '@angular/core';
+import { RegisterComponent } from './register/register/register.component';
+import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
+// Import ListServiceComponent here if it exists
 
 @NgModule({
   declarations: [
@@ -19,7 +18,9 @@ import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.c
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LanceSvComponent
+    LanceSvComponent,
+    ListeServiceComponent
+    // ListServiceComponent, // Uncomment and import it if you have this component
   ],
   imports: [
     BrowserModule,
@@ -27,12 +28,9 @@ import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.c
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [
-
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

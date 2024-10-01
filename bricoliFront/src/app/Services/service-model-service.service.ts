@@ -54,6 +54,16 @@ export class ServiceModelServiceService {
 
     return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });
   }
+
+
+
+  
+  allCategoriServices(): Observable<ModelService[]> {
+    const headers = this.createAuthorizationHeader();
+    
+    return this.http.get<ModelService[]>(`${this.apiUrl}/categoriService`,{ headers: headers || {} });
+  }
+
 }
 
 

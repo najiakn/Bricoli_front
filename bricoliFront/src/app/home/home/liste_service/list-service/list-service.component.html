@@ -1,0 +1,82 @@
+<p>list-service works!</p>
+<!-- Navbar -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <!-- Logo -->
+          <img class="h-8 w-auto" src="/assets/imgs/logo.png" alt="Bricoli Logo">
+        </div>
+        <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
+          <!-- Search input -->
+          <div class="max-w-lg w-full lg:max-w-xs">
+            <label for="search" class="sr-only">Rechercher</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i class="fas fa-search text-gray-400"></i>
+              </div>
+            <!--  <input id="search" [(ngModel)]="searchTerm" (input)="onSearch()" name="search" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Rechercher" type="search">-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="flex min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md">
+      <nav class="p-4">
+        <ul class="space-y-2">
+          <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">Opportinites de prestation</a></li>
+  
+          <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Offres de Demande</a></li>
+          <li><a href="lancerService" class="block p-2 hover:bg-gray-100 rounded">Lancer un Service</a></li>
+          <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Services Offerts</a></li>
+          <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Bricoli_pro</a></li>
+          <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Mon Compte</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-------------------------------------------------------------------------------------------------->
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Liste des services</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Type de paiement</th>
+                <th>Image de service</th>
+                <th>Type de Service</th>
+
+                <th>Operations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let service of modelService">
+                <td>{{ service.titre }}</td>
+                <td>{{ service.description }}</td>
+                <td>{{ service.prix }}</td>
+                <td>{{ service.typePaiement }}</td>
+               
+
+
+                <td>
+                  <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail" style="max-width: 100px;">
+                </td>
+                <td>{{ service.typeService.nomType }}</td>
+                <td>
+                  <button class="btn btn-sm btn-primary mr-2">Modifier</button>
+                  <button class="btn btn-sm btn-danger">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      

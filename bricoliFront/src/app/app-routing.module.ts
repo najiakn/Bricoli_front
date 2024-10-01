@@ -4,6 +4,8 @@ import { LoginComponent } from './authe/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
 import { HomeComponent } from './home/home/home.component';
 import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.component';
+import { CommonModule } from '@angular/common';
+import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
 
 
 
@@ -15,11 +17,15 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
   { path: 'lancerService', component: LanceSvComponent},
+  { path: 'listeService', component: ListeServiceComponent},
+
+
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class AppRoutingModule { }

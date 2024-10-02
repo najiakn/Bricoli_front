@@ -24,7 +24,7 @@ export class TypeServiceService {
     }
   }
   
-  getTypeServices(): Observable<TypeService[]> {
+  allTypeServices(): Observable<TypeService[]> {
     const headers = this.createAuthorizationHeader();
 
     return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });

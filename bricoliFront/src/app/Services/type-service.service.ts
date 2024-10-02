@@ -29,4 +29,9 @@ export class TypeServiceService {
 
     return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });
   }
+
+  addTypeService(newType: TypeService): Observable<TypeService> {
+    const headers = this.createAuthorizationHeader();
+    return this.http.post<TypeService>(`${this.apiTypeService}/create-type-service`, newType, { headers: headers || {} });
+  }
 }

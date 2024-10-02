@@ -44,6 +44,27 @@ export class ListeTypeServiceComponent implements OnInit {
   }
             
 
+
+  addServiceType(): void {
+    if (this.newTypeName.trim()) {
+      const newType: TypeService = {
+        id: 0, // The server will assign the actual ID
+        nomType: this.newTypeName.trim()
+      };
+
+      this.typeserviceservice.addTypeService(newType).subscribe(
+        (addedType: TypeService) => {
+          console.log('Nouveau type de service ajouté:', addedType);
+          this.serviceTypes.push(addedType);
+          this.newTypeName = ''; // Clear the input field
+        },
+        (error: any) => {
+          console.error('Erreur lors de l\'ajout du type de service', error);
+          this.errorMessage = 'Une erreur est survenue lors de l\'ajout du type de service.';
+        }
+      );
+    }
+  }
 }
 
 

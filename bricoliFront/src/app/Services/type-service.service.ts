@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TypeService } from '../models/TypeService';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +32,15 @@ export class TypeServiceService {
 
   addTypeService(newType: TypeService): Observable<TypeService> {
     const headers = this.createAuthorizationHeader();
-    return this.http.post<TypeService>(`${this.apiTypeService}/create-type-service`, newType, { headers: headers || {} });
+    return this.http.post<TypeService>(`${this.apiTypeService}/create-type-service`, newType, { headers: headers || {} })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 409) {
+            // 409 Conflict - Type already exists
+            return throwError(() => new Error('Ce type de service existe déjà.'));
+          }
+          return throwError(() => new Error('Une erreur est survenue lors de l\'ajout du type de service.'));
+        })
+      );
   }
 }

@@ -15,8 +15,7 @@ export class ListeTypeServiceComponent implements OnInit {
   private apiUrl = 'http://localhost:8083/api/typeServices'; // Adjust this URL as needed
   typemodel: TypeService[] = [];
   errorMessage: string = '';
-
-
+  isError: boolean = false;
 
   constructor(private typeserviceservice: TypeServiceService,
               private router: Router ) {}
@@ -25,27 +24,24 @@ export class ListeTypeServiceComponent implements OnInit {
     this.loadTypeService();
   }
 
-
-
-
-
   loadTypeService(): void {
     this.typeserviceservice.allTypeServices().subscribe(
       (data: TypeService[]) => {
         this.serviceTypes = data;
         console.log(data);
-
       },
       (error: any) => {
         console.error('Erreur lors de la récupération des projets', error);
         this.errorMessage = 'Une erreur est survenue lors du chargement des projets.';
+        this.isError = true;
       }
     );
   }
-            
-
 
   addServiceType(): void {
+    this.isError = false;
+    this.errorMessage = '';
+
     if (this.newTypeName.trim()) {
       const newType: TypeService = {
         id: 0,
@@ -61,11 +57,9 @@ export class ListeTypeServiceComponent implements OnInit {
         (error: any) => {
           console.error('Erreur lors de l\'ajout du type de service', error);
           this.errorMessage = error.message || 'Une erreur est survenue lors de l\'ajout du type de service.';
+          this.isError = true;
         }
       );
     }
   }
 }
-
-
-

@@ -5,16 +5,20 @@
       <div class="input-group">
         <input 
           type="text" 
-          class="form-control" 
+          class="form-control"
+          [ngClass]="{'is-invalid': isError}"
           [(ngModel)]="newTypeName" 
           placeholder="Nom du type de service"
         >
         <button class="btn btn-primary" (click)="addServiceType()">Ajouter ce type</button>
       </div>
+      <div *ngIf="isError" class="text-danger mt-2">
+        {{ errorMessage }}
+      </div>
     </div>
   </div>
   
-  <div class="row">
+  <div class="row">  
     <div class="col-12">
       <table class="table table-striped">
         <thead>

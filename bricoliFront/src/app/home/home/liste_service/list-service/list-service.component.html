@@ -51,6 +51,7 @@
             <th>Description</th>
             <th>Prix</th>
             <th>Type de paiement</th>
+            <th>Date Creation</th>
             <th>Image de service</th>
 
             <th>Operations</th>
@@ -62,15 +63,15 @@
             <td>{{ service.description }}</td>
             <td>{{ service.prix }}</td>
             <td>{{ service.typePaiement }}</td>
-
+            <td>{{service.dateCreation}}</td>
 
 
             <td>
               <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail" style="max-width: 100px;">
             </td>
-<td>
-            <button class="btn btn-sm btn-primary mr-2">Modifier</button>
-            <button class="btn btn-sm btn-danger" (click)="onDeleteService(service.id)">Supprimer</button>
+            <td>
+              <button class="btn btn-sm btn-primary mr-2">Modifier</button>
+              <button class="btn btn-sm btn-danger" (click)="onDeleteService(service.id)">Supprimer</button>
             </td>
           </tr>
         </tbody>

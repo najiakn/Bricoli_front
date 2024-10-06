@@ -19,12 +19,12 @@ export class LanceSvComponent implements OnInit {
   selectedFile: File | null = null;
   typeServices: TypeService[] = [];
   typePaiements = Object.values(TypePaiement);
-  imageUrl: String |null=null;
+  imageUrl: String | null = null;
   constructor(
     private fb: FormBuilder,
     private serviceService: ServiceModelServiceService,
-   private   uploadService:UploadImage,
-   private route:Router,
+    private uploadService: UploadImage,
+    private route: Router,
   ) {
     this.serviceForm = this.fb.group({
       titre: ['', Validators.required],
@@ -35,7 +35,7 @@ export class LanceSvComponent implements OnInit {
       imageUrl: [''],
       dateCreation: [Date.now()],
       etatService: ['NON_ENCOUR'],
-      categorie: ['OFFRE'],
+      categorie: ['SERVICE'],
     });
   }
 
@@ -68,7 +68,7 @@ export class LanceSvComponent implements OnInit {
       this.serviceService.createService(formData).subscribe(
         data => {
           console.log('Automobiliste created successfully:', data);
-          this.route.navigate(['/HOME']);
+          this.route.navigate(['/home']);
         }
       )
 
@@ -83,7 +83,7 @@ export class LanceSvComponent implements OnInit {
         [controlName]: file
       });
       this.serviceForm.get(controlName)?.markAsTouched();
-        this.imageUrl = previewUrl;
+      this.imageUrl = previewUrl;
     } else {
       alert('Veuillez sélectionner une image valide');
     }

@@ -12,7 +12,6 @@ import { RegisterComponent } from './register/register/register.component';
 import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
 import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
 import { CreatTypeServiceComponent } from './home/home/type-service/creat-type-service/creat-type-service.component';
-// Import ListServiceComponent here if it exists
 
 @NgModule({
   declarations: [
@@ -23,7 +22,7 @@ import { CreatTypeServiceComponent } from './home/home/type-service/creat-type-s
     LanceSvComponent,
     ListeServiceComponent,
     ListeTypeServiceComponent,
-    CreatTypeServiceComponent
+    CreatTypeServiceComponent,
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],
   imports: [

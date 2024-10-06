@@ -74,6 +74,11 @@ export class ServiceModelServiceService {
     return this.http.delete<void>(`${this.apiUrl}/delete-service/${id}`, { headers: headers || {} });
   }
 
+  updateService(service: ModelService): Observable<ModelService> {
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.put<ModelService>(`${this.apiUrl}/update-service/${service.id}`, service);
+  }
 }
 
 

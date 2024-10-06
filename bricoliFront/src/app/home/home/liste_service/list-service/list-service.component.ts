@@ -49,7 +49,10 @@ export class ListeServiceComponent {
           console.error('Erreur lors de la suppression du service', error);
         }
       );
-    }
-  }
+    }}
+      modifierService(id: number): void {
+        this.router.navigate(['/ModifierService', id]); // Navigate to the modification form
+      }
+      
 
 }

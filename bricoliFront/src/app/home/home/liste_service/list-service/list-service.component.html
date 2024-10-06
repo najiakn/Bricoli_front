@@ -70,7 +70,7 @@
               <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail" style="max-width: 100px;">
             </td>
             <td>
-              <button class="btn btn-sm btn-primary mr-2">Modifier</button>
+              <button class="btn btn-sm btn-primary mr-2" (click)="modifierService(service.id)">Modifier</button>
               <button class="btn btn-sm btn-danger" (click)="onDeleteService(service.id)">Supprimer</button>
             </td>
           </tr>

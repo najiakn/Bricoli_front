@@ -12,7 +12,7 @@ export class TypeServiceService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   private createAuthorizationHeader(): HttpHeaders | undefined {
     const jwtToken = localStorage.getItem('authToken');
     if (jwtToken) {
@@ -23,11 +23,11 @@ export class TypeServiceService {
       return undefined;
     }
   }
-  
+
   allTypeServices(): Observable<TypeService[]> {
     const headers = this.createAuthorizationHeader();
 
-    return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });
+    return this.http.get<TypeService[]>(`${this.apiTypeService}`, { headers: headers || {} });
   }
 
   addTypeService(newType: TypeService): Observable<TypeService> {

@@ -7,20 +7,23 @@ import { LanceSvComponent } from './home/home/lancer_service/lance-sv/lance-sv.c
 import { CommonModule } from '@angular/common';
 import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
 import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
+import { ModifierServiceComponent } from './home/home/modifier-service/modifier-service/modifier-service.component';
 
 
 
 const routes: Routes = [
-//  { path: '', redirectTo: "/login", pathMatch: 'full' },
- { path: '', redirectTo: "/home", pathMatch: 'full' },
+  //  { path: '', redirectTo: "/login", pathMatch: 'full' },
+  { path: '', redirectTo: "/home", pathMatch: 'full' },
 
-{ path: "login", component: LoginComponent },
-  { path: 'register', component: RegisterComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'lancerService', component: LanceSvComponent},
-  { path: 'listeService', component: ListeServiceComponent},
+  { path: "login", component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'lancerService', component: LanceSvComponent },
+  { path: 'listeService', component: ListeServiceComponent },
 
-  { path: 'listeTypeService', component: ListeTypeServiceComponent},
+  { path: 'listeTypeService', component: ListeTypeServiceComponent },
+
+  { path: 'ModifierService/:id', component: ModifierServiceComponent },
 
 
 ];

@@ -19,7 +19,7 @@ export class ServiceModelServiceService {
 
   allServices(): Observable<ModelService[]> {
     const headers = this.createAuthorizationHeader();
-    return this.http.get<ModelService[]>(`${this.apiUrl}/offre`,{ headers: headers || {} });
+    return this.http.get<ModelService[]>(`${this.apiUrl}/offre`, { headers: headers || {} });
   }
 
 
@@ -38,30 +38,40 @@ export class ServiceModelServiceService {
   createService(serviceDto: ModelService): Observable<ModelService> {
     const headers = this.createAuthorizationHeader();
 
-    return this.http.post<ModelService>(`${this.apiUrl}/create-service`, serviceDto,{ headers: headers || {} });
+    return this.http.post<ModelService>(`${this.apiUrl}/create-service`, serviceDto, { headers: headers || {} });
   }
 
-  
-   
-    // Ajouter l'en-tête Authorization (JWT)
-  
-  
 
 
- 
+  // Ajouter l'en-tête Authorization (JWT)
+
+
+
+
+
   getTypeServices(): Observable<TypeService[]> {
     const headers = this.createAuthorizationHeader();
 
-    return this.http.get<TypeService[]>(`${this.apiTypeService}`,{ headers: headers || {} });
+    return this.http.get<TypeService[]>(`${this.apiTypeService}`, { headers: headers || {} });
   }
 
 
 
-  
+
   allCategoriServices(): Observable<ModelService[]> {
     const headers = this.createAuthorizationHeader();
-    
-    return this.http.get<ModelService[]>(`${this.apiUrl}/categoriService`,{ headers: headers || {} });
+
+    return this.http.get<ModelService[]>(`${this.apiUrl}/categoriService`, { headers: headers || {} });
+  }
+
+
+
+
+
+  deleteService(id: number): Observable<void> {
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.delete<void>(`${this.apiUrl}/delete-service/${id}`, { headers: headers || {} });
   }
 
 }

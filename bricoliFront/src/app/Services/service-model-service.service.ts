@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ModelService } from 'src/app/models/ModelService';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -11,6 +11,9 @@ import { TypeService } from '../models/TypeService';
 export class ServiceModelServiceService {
   private apiUrl = 'http://localhost:8083/api/services';
   private apiTypeService = 'http://localhost:8083/api/typeServices';
+  private tokenKey = 'authToken'; // Assuming this is the key for JWT token
+  private rolesKey = 'roles'; // Assuming this is the key for user roles
+  private rolesSubject = new BehaviorSubject<any[]>([]); // Assuming you want to track user roles
 
   // http://localhost:8083/api/services/create-service
 
@@ -85,7 +88,14 @@ export class ServiceModelServiceService {
     return this.http.put<ModelService>(`${this.apiUrl}/update-service/${serviceDto.id}`, serviceDto, { headers: headers || {} });
   }
   
-  
+  logout(): void {
+    localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.rolesKey);
+    this.rolesSubject.next([]);
+    // Optionally, redirect the user after logout
+    // window.location.reload(); // or use Angular Router to navigate to the login page
+  }
+
 
 }
 

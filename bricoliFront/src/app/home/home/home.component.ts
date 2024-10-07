@@ -16,16 +16,17 @@ interface Service {
 export class HomeComponent implements OnInit {
   modelService: ModelService[] = [];
   errorMessage: string = '';
-nomProjet: string | undefined;
+  nomProjet: string | undefined;
 
 
   constructor(private serviceModelservice: ServiceModelServiceService,
-              private router: Router ) {}
+    private router: Router) { }
 
 
   ngOnInit(): void {
-          this.loadServiceModel();
-                  }
+    this.loadServiceModel();
+  }
+  check = false;
 
 
   loadServiceModel(): void {
@@ -41,7 +42,12 @@ nomProjet: string | undefined;
       }
     );
   }
-            
+  logout() {
+    this.serviceModelservice.logout();
+    // Optional: redirect to the login page or refresh the app
+    window.location.reload(); // or use Angular Router
+  }
+
 
 }
 

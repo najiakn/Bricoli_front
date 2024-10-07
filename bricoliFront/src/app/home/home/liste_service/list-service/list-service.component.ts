@@ -54,5 +54,9 @@ export class ListeServiceComponent {
         this.router.navigate(['/ModifierService', id]); // Navigate to the modification form
       }
       
-
+      logout() {
+        this.serviceModelservice.logout();
+        // Optional: redirect to the login page or refresh the app
+        window.location.reload(); // or use Angular Router
+      }
 }

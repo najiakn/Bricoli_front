@@ -93,6 +93,10 @@ export class LanceSvComponent implements OnInit {
     this.selectedFile = null;
     // Optionally, reset typeServices or handle other cancellation logic
   }
-
+  logout() {
+    this.serviceService.logout();
+    // Optional: redirect to the login page or refresh the app
+    window.location.reload(); // or use Angular Router
+  }
   
 }

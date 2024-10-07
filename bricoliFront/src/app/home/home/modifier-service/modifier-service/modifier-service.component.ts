@@ -90,4 +90,9 @@ export class ModifierServiceComponent implements OnInit {
       console.error('Error updating service:', error);
     });
   }
+  logout() {
+    this.serviceModelService.logout();
+    // Optional: redirect to the login page or refresh the app
+    window.location.reload(); // or use Angular Router
+  }
 }

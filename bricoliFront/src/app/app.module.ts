@@ -13,6 +13,7 @@ import { ListeServiceComponent } from './home/home/liste_service/list-service/li
 import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
 import { CreatTypeServiceComponent } from './home/home/type-service/creat-type-service/creat-type-service.component';
 import { ModifierServiceComponent } from './home/home/modifier-service/modifier-service/modifier-service.component';
+import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ModifierServiceComponent } from './home/home/modifier-service/modifier-
     ListeTypeServiceComponent,
     CreatTypeServiceComponent,
     ModifierServiceComponent,
+    ClientHomeComponent,
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],
   imports: [

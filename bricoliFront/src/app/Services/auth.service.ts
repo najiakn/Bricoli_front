@@ -15,12 +15,16 @@ export class AuthService {
   private username: string | null = null;
   private role: string[] | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   register(request: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/registerPrestataire`, request);
   }
 
+
+  registerClient(request: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/registerClient`, request);
+  }
 
   login(mail: string, password: string): Observable<any> {
     return this.http.post<{ token: string }>(`${this.apiUrl}/authenticate`, { mail, password }).pipe(
@@ -37,7 +41,7 @@ export class AuthService {
       })
     );
   }
-  
+
 
 
   saveToken(token: string): void {
@@ -59,7 +63,7 @@ export class AuthService {
     this.role = decodedToken.roles;
     this.userId = decodedToken.id || null;
   }
-  
+
 
   getToken(): string | null {
     return localStorage.getItem('authToken');
@@ -111,5 +115,5 @@ export class AuthService {
     return !!this.getToken();
   }
 
-  
+
 }

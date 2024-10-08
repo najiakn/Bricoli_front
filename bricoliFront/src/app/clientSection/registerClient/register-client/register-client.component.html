@@ -1,0 +1,44 @@
+<p>register-client works!</p>
+<div class="container">
+    <div class="register-box">
+        <h2>Register Client</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="registerClient()" class="form-container">
+
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="nom" formControlName="nom" placeholder="Choose a username" />
+                <div *ngIf="username?.invalid && username?.touched" class="error-message">
+                    <span *ngIf="username?.errors?.['required']">Username is required.</span>
+                    <span *ngIf="username?.errors?.['minlength']">Username must be at least 4 characters long.</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="Enter your mail" />
+                <div *ngIf="mail?.invalid && mail?.touched" class="error-message">
+                    <span *ngIf="mail?.errors?.['required']">Email is required.</span>
+                    <span *ngIf="mail?.errors?.['email']">Enter a valid mail.</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password"
+                    placeholder="Create a strong password" />
+                <div *ngIf="password?.invalid && password?.touched" class="error-message">
+                    <span *ngIf="password?.errors?.['required']">Password is required.</span>
+                    <span *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</span>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="registerForm.invalid" class="submit-button">
+                Create Account
+            </button>
+        </form>
+        <p class="register-prompt">
+            Already have an account?
+            <a href="/login">Log in</a>
+        </p>
+    </div>
+</div>

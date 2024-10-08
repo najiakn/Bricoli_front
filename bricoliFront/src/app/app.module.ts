@@ -14,6 +14,8 @@ import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-s
 import { CreatTypeServiceComponent } from './home/home/type-service/creat-type-service/creat-type-service.component';
 import { ModifierServiceComponent } from './home/home/modifier-service/modifier-service/modifier-service.component';
 import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
+import { AccueilComponent } from './accueil/accueil/accueil.component';
+import { RegisterClientComponent } from './clientSection/registerClient/register-client/register-client.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,9 @@ import { ClientHomeComponent } from './clientSection/client-home/client-home/cli
     CreatTypeServiceComponent,
     ModifierServiceComponent,
     ClientHomeComponent,
+    AccueilComponent,
+    RegisterClientComponent,
+    
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],
   imports: [

@@ -19,28 +19,31 @@ export class LoginComponent {
       return;
     }
 
-    const {mail, password } = form.value;
-    console.log("nom "+mail, "passe" +password );
+    const { mail, password } = form.value;
+    console.log("nom " + mail, "passe" + password);
     this.authService.login(mail, password).subscribe(
-      (response: { token: string; userId: number; }) => {
+      (response: { token: string; user_id: number; }) => {
         this.authService.saveToken(response.token);
         const role = this.authService.getRole();
         console.log('Role after login:', role);
-        if (role === 'ROLE_ADMIN') {
-          console.log('Navigating to dashboard');
-          this.router.navigate(['/dashboard']);
-        } else if (role === 'ROLE_TECHNICIEN') {
-          console.log('Navigating to technician dashboard');
-          this.router.navigate(['/technician-dashboard']);
-        } else {
-          console.log('Navigating to home');
+
+        if (role === 'CLIENT') {
+          console.log('Redirection vers la page CLIENT');
+          this.router.navigate(['/ClientHome']);
+        }
+        else if (role === 'PRESTATAIRE') {
+          console.log('Redirection vers la page PRESTATAIRE');
           this.router.navigate(['/home']);
+        }
+        else {
+          console.log('Redirection vers la page par défaut');
+          this.router.navigate(['/AdminHome']);
         }
       },
       (error: any) => {
-        console.error('Login failed', error);
-        this.errorMessage = 'Login failed. Please check your username and password.';
+        console.error('Échec de la connexion', error);
+        this.errorMessage = 'Échec de la connexion. Veuillez vérifier votre nom d\'utilisateur et mot de passe.';
       }
     );
   }
-}
+}    

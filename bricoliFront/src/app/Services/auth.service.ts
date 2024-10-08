@@ -60,7 +60,7 @@ export class AuthService {
     const decodedToken: any = this.decodeToken(token);
     console.log('Decoded Token:', decodedToken);
     this.username = decodedToken.sub;
-    this.role = decodedToken.roles;
+    this.role = decodedToken.role;
     this.userId = decodedToken.id || null;
   }
 
@@ -94,15 +94,14 @@ export class AuthService {
   }
 
   getRole(): string | null {
-    if (!this.role) {
-      const token = this.getToken();
-      if (token) {
-        this.role = this.decodeToken(token).roles || [];
-      }
+    const token = this.getToken(); // Assuming you have a method to get the token
+    if (!token) {
+      return null;
     }
-    return Array.isArray(this.role) && this.role.length > 0 ? this.role[0] : null;
+    const payload = JSON.parse(atob(token.split('.')[1])); // Decode the JWT token
+    return payload.role; // Adjust depending on how your token is structured
   }
-
+  
   logout(): void {
     localStorage.removeItem('authToken');
     this.username = null;

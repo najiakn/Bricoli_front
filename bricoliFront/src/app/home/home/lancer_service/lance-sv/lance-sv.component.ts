@@ -98,5 +98,5 @@ export class LanceSvComponent implements OnInit {
     // Optional: redirect to the login page or refresh the app
     window.location.reload(); // or use Angular Router
   }
-  
+
 }

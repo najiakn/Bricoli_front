@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import { ListeServiceComponent } from './home/home/liste_service/list-service/list-service.component';
 import { ListeTypeServiceComponent } from './home/home/type-service/liste-type-service/liste-type-service.component';
 import { ModifierServiceComponent } from './home/home/modifier-service/modifier-service/modifier-service.component';
-import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 import { AccueilComponent } from './accueil/accueil/accueil.component';
 import { RegisterClientComponent } from './clientSection/registerClient/register-client/register-client.component';
+import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 
 
 
@@ -27,9 +27,10 @@ const routes: Routes = [
   { path: 'listeTypeService', component: ListeTypeServiceComponent },
 
   { path: 'ModifierService/:id', component: ModifierServiceComponent },
-  { path: 'ClientHome', component: ClientHomeComponent },
   { path: 'Accueil', component: AccueilComponent },
-  { path: 'RegisterClient', component: RegisterClientComponent }
+  { path: 'RegisterClient', component: RegisterClientComponent },
+  { path: 'ClientHome', component: ClientHomeComponent },
+
 
 
 

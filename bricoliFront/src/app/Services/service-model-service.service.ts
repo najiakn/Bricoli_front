@@ -87,12 +87,12 @@ export class ServiceModelServiceService {
     const headers = this.createAuthorizationHeader();
     return this.http.get<ModelService>(`${this.apiUrl}/${id}`, { headers: headers || {} });
   }
-  
+
   updateService(serviceDto: ModelService): Observable<ModelService> {
     const headers = this.createAuthorizationHeader();
     return this.http.put<ModelService>(`${this.apiUrl}/update-service/${serviceDto.id}`, serviceDto, { headers: headers || {} });
   }
-  
+
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.rolesKey);
@@ -103,7 +103,7 @@ export class ServiceModelServiceService {
 
 
 
-  
+
 
 }
 

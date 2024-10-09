@@ -13,6 +13,7 @@ import { RegisterClientComponent } from './clientSection/registerClient/register
 import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 import { AdminHomeComponent } from './adminSection/adminHome/admin-home/admin-home.component';
 import { LancerOffreComponent } from './clientSection/lancer-offre/lancer-offre/lancer-offre.component';
+import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/lister-offre.component';
 
 
 
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'ClientHome', component: ClientHomeComponent },
   { path: 'AdminHome', component: AdminHomeComponent },
   { path: 'LancerOffre', component: LancerOffreComponent },
-  { path: 'ListerOffre', component: ListeServiceComponent }
+  { path: 'ListerOffre', component: ListerOffreComponent }
 
 
 

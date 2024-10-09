@@ -25,6 +25,11 @@ export class ServiceModelServiceService {
     return this.http.get<ModelService[]>(`${this.apiUrl}/offre`, { headers: headers || {} });
   }
 
+  allServiceClient(): Observable<ModelService[]> {
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<ModelService[]>(`${this.apiUrl}/categoriService`, { headers: headers || {} });
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders | undefined {
     const jwtToken = localStorage.getItem('authToken');
@@ -97,7 +102,9 @@ export class ServiceModelServiceService {
   }
 
 
-}
 
+  
+
+}
 
 

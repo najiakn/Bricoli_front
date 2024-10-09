@@ -11,6 +11,7 @@ import { ModifierServiceComponent } from './home/home/modifier-service/modifier-
 import { AccueilComponent } from './accueil/accueil/accueil.component';
 import { RegisterClientComponent } from './clientSection/registerClient/register-client/register-client.component';
 import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
+import { AdminHomeComponent } from './adminSection/adminHome/admin-home/admin-home.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'Accueil', component: AccueilComponent },
   { path: 'RegisterClient', component: RegisterClientComponent },
   { path: 'ClientHome', component: ClientHomeComponent },
+  { path: 'AdminHome', component: AdminHomeComponent },
 
 
 

@@ -16,6 +16,7 @@ import { ModifierServiceComponent } from './home/home/modifier-service/modifier-
 import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 import { AccueilComponent } from './accueil/accueil/accueil.component';
 import { RegisterClientComponent } from './clientSection/registerClient/register-client/register-client.component';
+import { AdminHomeComponent } from './adminSection/adminHome/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RegisterClientComponent } from './clientSection/registerClient/register
     ClientHomeComponent,
     AccueilComponent,
     RegisterClientComponent,
+    AdminHomeComponent,
     
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],

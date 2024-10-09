@@ -34,6 +34,8 @@ const routes: Routes = [
   { path: 'ClientHome', component: ClientHomeComponent },
   { path: 'AdminHome', component: AdminHomeComponent },
   { path: 'LancerOffre', component: LancerOffreComponent },
+  { path: 'ListerOffre', component: ListeServiceComponent }
+
 
 
 

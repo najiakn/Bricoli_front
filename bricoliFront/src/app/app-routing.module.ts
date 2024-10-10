@@ -14,6 +14,7 @@ import { ClientHomeComponent } from './clientSection/client-home/client-home/cli
 import { LancerOffreComponent } from './clientSection/lancer-offre/lancer-offre/lancer-offre.component';
 import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/lister-offre.component';
 import { ModifierOffreComponent } from './clientSection/modifier-offre/modifier-offre/modifier-offre.component';
+import { AdminHomeComponent } from './adminSection/AdminHome/admin-home/admin-home.component';
 
 
 
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'ModifierOffre/:id', component: ModifierOffreComponent },
 
   { path: 'ListerOffre', component: ListerOffreComponent },
+  { path: 'AdminHome', component: AdminHomeComponent },
+
 
 
 

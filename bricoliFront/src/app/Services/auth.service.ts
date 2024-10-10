@@ -25,6 +25,10 @@ export class AuthService {
   registerClient(request: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/registerClient`, request);
   }
+  registerAdmin
+    (request: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/registerAdmin`, request);
+  }
 
   login(mail: string, password: string): Observable<any> {
     return this.http.post<{ token: string }>(`${this.apiUrl}/authenticate`, { mail, password }).pipe(
@@ -101,7 +105,7 @@ export class AuthService {
     const payload = JSON.parse(atob(token.split('.')[1])); // Decode the JWT token
     return payload.role; // Adjust depending on how your token is structured
   }
-  
+
   logout(): void {
     localStorage.removeItem('authToken');
     this.username = null;

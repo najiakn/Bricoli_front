@@ -35,6 +35,10 @@ export class LoginComponent {
           console.log('Redirection vers la page PRESTATAIRE');
           this.router.navigate(['/home']);
         }
+        else if (role === 'ADMIN') {
+          console.log('Redirection vers la page PRESTATAIRE');
+          this.router.navigate(['/AdminHome']);
+        }
         else {
           console.log('Redirection vers la page par défaut');
           this.router.navigate(['/AdminHome']);

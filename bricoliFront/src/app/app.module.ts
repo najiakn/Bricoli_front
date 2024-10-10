@@ -19,6 +19,7 @@ import { RegisterClientComponent } from './clientSection/registerClient/register
 import { AdminHomeComponent } from './adminSection/adminHome/admin-home/admin-home.component';
 import { LancerOffreComponent } from './clientSection/lancer-offre/lancer-offre/lancer-offre.component';
 import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/lister-offre.component';
+import { ModifierOffreComponent } from './clientSection/modifier-offre/modifier-offre/modifier-offre.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/
     AdminHomeComponent,
     LancerOffreComponent,
     ListerOffreComponent,
+    ModifierOffreComponent,
     
     // ListServiceComponent, // Uncomment and import it if you have this component
   ],

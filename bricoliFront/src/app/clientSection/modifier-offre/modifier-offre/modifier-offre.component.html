@@ -1,4 +1,5 @@
-<p>list-OFFRE works!</p>
+<p>modifier-offre works!</p>
+<p>list-service works!</p>
 <!-- Navbar -->
 <nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,6 +29,8 @@
     <aside class="w-64 bg-white shadow-md">
         <nav class="p-4">
             <ul class="space-y-2">
+                <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">Opportinites de prestation</a></li>
+
                 <li><a href="ClientAccueil" class="block p-2 hover:bg-gray-100 rounded">ClientAccueil</a></li>
 
                 <li><a href="ClientHome" class="block p-2 hover:bg-gray-100 rounded">Les Services disponibles</a></li>
@@ -44,49 +47,47 @@
         </nav>
     </aside>
 
-    <!-------------------------------------------------------------------------------------------------->
 
     <div class="container mt-4">
-        <h2 class="text-center mb-4">Liste des services</h2>
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead class="bg-primary text-white">
-                    <tr>
-                        <th>Titre</th>
-                        <th>Description</th>
-                        <th>Prix</th>
-                        <th>Type de paiement</th>
-                        <th>Date de Creation</th>
-                        <th>Etat de Service</th>
+        <h2 class="text-center mb-4">Modifier Offre</h2>
+        <form (ngSubmit)="onSubmit()" #modificationForm="ngForm">
+            <div class="form-group">
+                <label for="titre">Titre Offre</label>
+                <input type="text" id="titre" class="form-control" [(ngModel)]="service.titre" name="titre" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description Offre</label>
+                <textarea id="description" class="form-control" [(ngModel)]="service.description" name="description"
+                    required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="prix">Prix Offre</label>
+                <input type="number" id="prix" class="form-control" [(ngModel)]="service.prix" name="prix" required>
+            </div>
+            <div class="form-group">
+                <label for="etatService">État du Offre</label>
+                <select id="etatService" class="form-control" [(ngModel)]="service.etatService" name="etatService"
+                    required>
+                    <option value="NON_ENCOUR">Non encour</option>
+                    <option value="EN_COURS">En cours</option>
+                    <option value="TRAITE">Traité</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="typePaiement">Type de paiement</label>
+                <select id="typePaiement" class="form-control" [(ngModel)]="service.typePaiement" name="typePaiement"
+                    required>
+                    <option value="EN_LIGNE">En ligne</option>
+                    <option value="EN_ESPECES">En espèces</option>
+                </select>
+            </div>
 
-                        <th>Image de service</th>
+            <div>
+                <label for="image">Image:</label>
+                <input type="file" (change)="onFileSelected($event)">
+                <img *ngIf="imageUrl" [src]="imageUrl" alt="Image de service" class="preview-image">
+            </div>
 
-                        <th>Operations</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let service of modelService">
-                        <td>{{ service.titre }}</td>
-                        <td>{{ service.description }}</td>
-                        <td>{{ service.prix }}</td>
-                        <td>{{ service.typePaiement }}</td>
-                        <td>{{service.dateCreation}}</td>
-                        <td>{{service.etatService}}</td>
-
-
-
-                        <td>
-                            <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail"
-                                style="max-width: 100px;">
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-primary mr-2"
-                                (click)="modifierOffre(service.id)">Modifier</button>
-                            <button class="btn btn-sm btn-danger"
-                                (click)="onDeleteService(service.id)">Supprimer</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+        </form>
     </div>

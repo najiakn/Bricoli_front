@@ -49,8 +49,8 @@ export class ListerOffreComponent {
       );
     }
   }
-  modifierService(id: number): void {
-    this.router.navigate(['/ModifierService', id]); // Navigate to the modification form
+  modifierOffre(id: number): void {
+    this.router.navigate(['/ModifierOffre', id]); // Navigate to the modification form
   }
 
   logout() {

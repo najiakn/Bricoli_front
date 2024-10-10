@@ -16,7 +16,6 @@ import { ModifierServiceComponent } from './home/home/modifier-service/modifier-
 import { ClientHomeComponent } from './clientSection/client-home/client-home/client-home.component';
 import { AccueilComponent } from './accueil/accueil/accueil.component';
 import { RegisterClientComponent } from './clientSection/registerClient/register-client/register-client.component';
-import { AdminHomeComponent } from './adminSection/adminHome/admin-home/admin-home.component';
 import { LancerOffreComponent } from './clientSection/lancer-offre/lancer-offre/lancer-offre.component';
 import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/lister-offre.component';
 import { ModifierOffreComponent } from './clientSection/modifier-offre/modifier-offre/modifier-offre.component';
@@ -35,7 +34,6 @@ import { ModifierOffreComponent } from './clientSection/modifier-offre/modifier-
     ClientHomeComponent,
     AccueilComponent,
     RegisterClientComponent,
-    AdminHomeComponent,
     LancerOffreComponent,
     ListerOffreComponent,
     ModifierOffreComponent,

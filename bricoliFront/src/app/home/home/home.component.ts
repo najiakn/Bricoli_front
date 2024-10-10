@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceModelServiceService } from 'src/app/Services/service-model-service.service';
 import { ModelService } from 'src/app/models/ModelService';
+import { FormsModule } from '@angular/forms';
 
 interface Service {
   id: number;

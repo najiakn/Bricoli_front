@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModelService } from 'src/app/models/ModelService';
-import { ServiceModelServiceService } from 'src/app/Services/service-model-service.service';
+import { Prestataire } from 'src/app/models/Prestataire';
+import { PrestataireServiceService } from 'src/app/Services/prestataire-service.service';
 
 @Component({
   selector: 'app-compte-pres',
@@ -9,40 +9,35 @@ import { ServiceModelServiceService } from 'src/app/Services/service-model-servi
   styleUrls: ['./compte-pres.component.css']
 })
 export class ComptePresComponent implements OnInit {
-  modelService: ModelService[] = [];
+  prestataire: Prestataire[] = [];
   errorMessage: string = '';
-  nomProjet: string | undefined;
 
 
-  constructor(private serviceModelservice: ServiceModelServiceService,
+  constructor(private prestataireService: PrestataireServiceService,
     private router: Router) { }
 
 
   ngOnInit(): void {
-    this.loadServiceModel();
+    this.loadComptePrestataire();
   }
-  check = false;
 
-
-  loadServiceModel(): void {
-    this.serviceModelservice.allServices().subscribe(
-      (data: ModelService[]) => {
-        this.modelService = data;
-        console.log(data);
-
+  loadComptePrestataire(): void {
+    this.prestataireService.getMyInfos().subscribe(
+      (data: Prestataire[]) => {
+        console.log(data); // Vérifiez ici la structure des données
+        this.prestataire = data;
       },
-      (error: any) => {
-        console.error('Erreur lors de la récupération des projets', error);
-        this.errorMessage = 'Une erreur est survenue lors du chargement des projets.';
+      (error) => {
+        console.error('Error fetching services:', error);
       }
     );
   }
+  
+
+
   logout() {
-    this.serviceModelservice.logout();
+    this.prestataireService.logout();
     // Optional: redirect to the login page or refresh the app
     window.location.reload(); // or use Angular Router
   }
-
-
 }
-

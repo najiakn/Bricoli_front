@@ -21,6 +21,8 @@ import { ListerOffreComponent } from './clientSection/lister-offre/lister-offre/
 import { ModifierOffreComponent } from './clientSection/modifier-offre/modifier-offre/modifier-offre.component';
 import { AdminHomeComponent } from './adminSection/AdminHome/admin-home/admin-home.component';
 import { AdminRegisterComponent } from './adminSection/admin-register/admin-register/admin-register.component';
+import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
+import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-pres.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { AdminRegisterComponent } from './adminSection/admin-register/admin-regi
     ModifierOffreComponent,
     AdminHomeComponent,
     AdminRegisterComponent,
+    AdminServiceComponent,
+    ComptePresComponent,
 
 
     // ListServiceComponent, // Uncomment and import it if you have this component

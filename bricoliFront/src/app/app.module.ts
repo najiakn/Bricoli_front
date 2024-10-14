@@ -23,6 +23,7 @@ import { AdminHomeComponent } from './adminSection/AdminHome/admin-home/admin-ho
 import { AdminRegisterComponent } from './adminSection/admin-register/admin-register/admin-register.component';
 import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
 import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-pres.component';
+import { ModifierCompteComponent } from './home/home/modifier-compte/modifier-compte/modifier-compte/modifier-compte.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-
     AdminRegisterComponent,
     AdminServiceComponent,
     ComptePresComponent,
+    ModifierCompteComponent,
 
 
     // ListServiceComponent, // Uncomment and import it if you have this component

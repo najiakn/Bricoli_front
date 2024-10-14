@@ -40,4 +40,8 @@ export class ComptePresComponent implements OnInit {
     // Optional: redirect to the login page or refresh the app
     window.location.reload(); // or use Angular Router
   }
+
+  modifiecompte(id: number): void {
+    this.router.navigate(['/ModifierCompte', id]); // Navigate to the modification form
+  }
 }

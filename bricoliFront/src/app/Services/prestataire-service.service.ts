@@ -26,20 +26,20 @@ export class PrestataireServiceService {
   getMyInfos(): Observable<Prestataire[]> {
     const headers = this.createAuthorizationHeader();
     return this.http.get<Prestataire | Prestataire[]>(`${this.apiUrl}/me`, { headers: headers || {} })
-        .pipe(
-            catchError(this.handleError),
-            map((data) => {
-                // Ensure we always return an array
-                return Array.isArray(data) ? data : [data]; // Wrap single object in an array
-            })
-        );
-}
+      .pipe(
+        catchError(this.handleError),
+        map((data) => {
+          // Ensure we always return an array
+          return Array.isArray(data) ? data : [data]; // Wrap single object in an array
+        })
+      );
+  }
 
-private handleError(error: HttpErrorResponse): Observable<never> {
-  // Handle the error here, maybe log it and return a user-friendly message
-  console.error('An error occurred:', error);
-  return throwError('Something bad happened; please try again later.');
-}
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    // Handle the error here, maybe log it and return a user-friendly message
+    console.error('An error occurred:', error);
+    return throwError('Something bad happened; please try again later.');
+  }
 
 
 
@@ -55,6 +55,12 @@ private handleError(error: HttpErrorResponse): Observable<never> {
     }
 
 
+  }
+
+
+  updatePrestataire(id: number, prestataire: Prestataire): Observable<Prestataire> {
+    const headers = this.createAuthorizationHeader();
+    return this.http.put<Prestataire>(`${this.apiUrl}/${id}`, prestataire, { headers: headers || {} });
   }
 
 

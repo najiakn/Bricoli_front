@@ -49,14 +49,15 @@ export class ListeServiceComponent {
           console.error('Erreur lors de la suppression du service', error);
         }
       );
-    }}
-      modifierService(id: number): void {
-        this.router.navigate(['/ModifierService', id]); // Navigate to the modification form
-      }
-      
-      logout() {
-        this.serviceModelservice.logout();
-        // Optional: redirect to the login page or refresh the app
-        window.location.reload(); // or use Angular Router
-      }
+    }
+  }
+  modifierService(id: number): void {
+    this.router.navigate(['/ModifierService', id]); // Navigate to the modification form
+  }
+
+  logout() {
+    this.serviceModelservice.logout();
+    // Optional: redirect to the login page or refresh the app
+    window.location.reload(); // or use Angular Router
+  }
 }

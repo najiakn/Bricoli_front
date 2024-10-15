@@ -23,7 +23,7 @@ export class ListerOffreComponent {
 
 
   loadCategoriServices(): void {
-    this.serviceModelservice.allServices().subscribe(
+    this.serviceModelservice.myOffre().subscribe(
       (data: ModelService[]) => {
 
         this.modelService = data;

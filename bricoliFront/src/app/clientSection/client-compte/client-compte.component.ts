@@ -8,7 +8,7 @@ import { ClientServiceService } from 'src/app/Services/client-service.service';
   templateUrl: './client-compte.component.html',
   styleUrls: ['./client-compte.component.css']
 })
-export class ClientCompteComponent  implements OnInit {
+export class ClientCompteComponent implements OnInit {
   client: Client[] = [];
   errorMessage: string = '';
 
@@ -32,7 +32,7 @@ export class ClientCompteComponent  implements OnInit {
       }
     );
   }
-  
+
 
 
   logout() {
@@ -41,7 +41,7 @@ export class ClientCompteComponent  implements OnInit {
     window.location.reload(); // or use Angular Router
   }
 
-  modifiecompte(id: number): void {
-    this.router.navigate(['/ModifierCompte', id]); // Navigate to the modification form
+  modifierclient(id: number): void {
+    this.router.navigate(['/Modifierclient', id]); // Navigate to the modification form
   }
 }

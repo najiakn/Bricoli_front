@@ -18,7 +18,8 @@ import { AdminHomeComponent } from './adminSection/AdminHome/admin-home/admin-ho
 import { AdminRegisterComponent } from './adminSection/admin-register/admin-register/admin-register.component';
 import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-pres.component';
 import { ModifierCompteComponent } from './home/home/modifier-compte/modifier-compte/modifier-compte/modifier-compte.component';
-import { ClientCompteComponent } from './clientSection/client-home/client-home/client-compte/client-compte/client-compte/client-compte.component';
+import { ClientCompteComponent } from './clientSection/client-compte/client-compte.component';
+import { ModifierClientComponent } from './clientSection/modifier-client/modifier-client/modifier-client.component';
 
 
 
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'AdminRegister', component: AdminRegisterComponent },
   { path: 'ComptePres', component: ComptePresComponent },
   { path: 'ClientCompte', component: ClientCompteComponent },
+  { path: 'Modifierclient/:id', component: ModifierClientComponent },
 
   { path: 'ModifierCompte/:id', component: ModifierCompteComponent },
 

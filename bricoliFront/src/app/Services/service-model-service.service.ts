@@ -79,6 +79,11 @@ export class ServiceModelServiceService {
   }
 
 
+  myOffre(): Observable<ModelService[]> {
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.get<ModelService[]>(`${this.apiUrl}/my-offres`, { headers: headers || {} });
+  }
 
 
 

@@ -61,7 +61,6 @@
                         <th>Telephone </th>
                         <th>Ville </th>
                         <th>Cnie</th>
-                        <th>zone De placement</th>
                         <th>Operations</th>
 
                     </tr>
@@ -75,13 +74,13 @@
                         <td>{{ cl.telephone }}</td>
                         <td>{{ cl.ville }}</td>
                         <td>{{ cl.cnie }}</td>
-                        <td>{{cl.zoneDeplacement}}</td>
 
 
 
 
                         <td>
-                            <button class="btn btn-sm btn-primary mr-2" (click)="modifiecompte(cl.id)">Modifier</button>
+                            <button class="btn btn-sm btn-primary mr-2"
+                                (click)="modifierclient(cl.id)">Modifier</button>
                             <button class="btn btn-sm btn-danger">Supprimer</button>
                         </td>
                     </tr>

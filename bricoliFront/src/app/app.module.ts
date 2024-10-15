@@ -24,8 +24,8 @@ import { AdminRegisterComponent } from './adminSection/admin-register/admin-regi
 import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
 import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-pres.component';
 import { ModifierCompteComponent } from './home/home/modifier-compte/modifier-compte/modifier-compte/modifier-compte.component';
-import { ClientCompteComponent } from './clientSection/client-home/client-home/client-compte/client-compte/client-compte/client-compte.component';
-import { ModifierClientComponent } from './clientSection/client-home/modifier-client/modifier-client/modifier-client.component';
+import { ClientCompteComponent } from './clientSection/client-compte/client-compte.component';
+import { ModifierClientComponent } from './clientSection/modifier-client/modifier-client/modifier-client.component';
 
 @NgModule({
   declarations: [

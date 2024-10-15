@@ -62,7 +62,7 @@ export class LancerOffreComponent implements OnInit {
       console.log('Form Data after:', formData);
       formData
 
-      this.serviceService.createService(formData).subscribe(
+      this.serviceService.createOffre(formData).subscribe(
         data => {
           console.log('Automobiliste created successfully:', data);
           this.route.navigate(['/ClientHome']);

@@ -49,6 +49,12 @@ export class ServiceModelServiceService {
     return this.http.post<ModelService>(`${this.apiUrl}/create-service`, serviceDto, { headers: headers || {} });
   }
 
+  createOffre(serviceDto: ModelService): Observable<ModelService> {
+    const headers = this.createAuthorizationHeader();
+
+    return this.http.post<ModelService>(`${this.apiUrl}/create-offre`, serviceDto, { headers: headers || {} });
+  }
+
 
 
   // Ajouter l'en-tête Authorization (JWT)

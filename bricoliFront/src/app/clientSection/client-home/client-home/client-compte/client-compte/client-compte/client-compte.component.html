@@ -1,4 +1,4 @@
-<p>list-OFFRE works!</p>
+<p>client-compte works!</p>
 <!-- Navbar -->
 <nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +28,7 @@
     <aside class="w-64 bg-white shadow-md">
         <nav class="p-4">
             <ul class="space-y-2">
-                <li><a href="ClientAccueil" class="block p-2 hover:bg-gray-100 rounded">ClientAccueil</a></li>
+                <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">ClientAccueil</a></li>
 
                 <li><a href="ClientAccueil" class="block p-2 hover:bg-gray-100 rounded">ClientAccueil</a></li>
 
@@ -54,38 +54,35 @@
             <table class="table table-striped table-bordered">
                 <thead class="bg-primary text-white">
                     <tr>
-                        <th>Titre</th>
-                        <th>Description</th>
-                        <th>Prix</th>
-                        <th>Type de paiement</th>
-                        <th>Date de Creation</th>
-                        <th>Etat de Service</th>
-
-                        <th>Image de service</th>
-
+                        <th>nom</th>
+                        <th>Prenom</th>
+                        <th>Age</th>
+                        <th>Genre </th>
+                        <th>Telephone </th>
+                        <th>Ville </th>
+                        <th>Cnie</th>
+                        <th>zone De placement</th>
                         <th>Operations</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let service of modelService">
-                        <td>{{ service.titre }}</td>
-                        <td>{{ service.description }}</td>
-                        <td>{{ service.prix }}</td>
-                        <td>{{ service.typePaiement }}</td>
-                        <td>{{service.dateCreation}}</td>
-                        <td>{{service.etatService}}</td>
+                    <tr *ngFor="let cl of client">
+                        <td>{{ cl.nom }}</td>
+                        <td>{{ cl.prenom }}</td>
+                        <td>{{ cl.age }}</td>
+                        <td>{{ cl.genre }}</td>
+                        <td>{{ cl.telephone }}</td>
+                        <td>{{ cl.ville }}</td>
+                        <td>{{ cl.cnie }}</td>
+                        <td>{{cl.zoneDeplacement}}</td>
+
 
 
 
                         <td>
-                            <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail"
-                                style="max-width: 100px;">
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-primary mr-2"
-                                (click)="modifierOffre(service.id)">Modifier</button>
-                            <button class="btn btn-sm btn-danger"
-                                (click)="onDeleteService(service.id)">Supprimer</button>
+                            <button class="btn btn-sm btn-primary mr-2" (click)="modifiecompte(cl.id)">Modifier</button>
+                            <button class="btn btn-sm btn-danger">Supprimer</button>
                         </td>
                     </tr>
                 </tbody>

@@ -69,7 +69,7 @@ export class ServiceModelServiceService {
   allCategoriServices(): Observable<ModelService[]> {
     const headers = this.createAuthorizationHeader();
 
-    return this.http.get<ModelService[]>(`${this.apiUrl}/categoriService`, { headers: headers || {} });
+    return this.http.get<ModelService[]>(`${this.apiUrl}/my-services`, { headers: headers || {} });
   }
 
 

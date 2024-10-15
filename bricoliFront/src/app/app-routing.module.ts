@@ -20,6 +20,8 @@ import { ComptePresComponent } from './home/home/compte-pres/compte-pres/compte-
 import { ModifierCompteComponent } from './home/home/modifier-compte/modifier-compte/modifier-compte/modifier-compte.component';
 import { ClientCompteComponent } from './clientSection/client-compte/client-compte.component';
 import { ModifierClientComponent } from './clientSection/modifier-client/modifier-client/modifier-client.component';
+import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
+import { AdminModifierServiceComponent } from './adminSection/admin-modifier-service/admin-modifier-service/admin-modifier-service.component';
 
 
 
@@ -46,11 +48,16 @@ const routes: Routes = [
   { path: 'ListerOffre', component: ListerOffreComponent },
   { path: 'AdminHome', component: AdminHomeComponent },
   { path: 'AdminRegister', component: AdminRegisterComponent },
+  { path: 'AdminService', component: AdminServiceComponent },
+
   { path: 'ComptePres', component: ComptePresComponent },
   { path: 'ClientCompte', component: ClientCompteComponent },
   { path: 'Modifierclient/:id', component: ModifierClientComponent },
 
   { path: 'ModifierCompte/:id', component: ModifierCompteComponent },
+
+  { path: 'AdminModifierService/:id', component: AdminModifierServiceComponent },
+
 
 
 

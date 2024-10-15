@@ -1,1 +1,98 @@
 <p>admin-service works!</p>
+<p>list-service works!</p>
+<!-- Navbar -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <!-- Logo -->
+                <img class="h-8 w-auto" src="/assets/imgs/logo.png" alt="Bricoli Logo">
+            </div>
+            <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
+                <!-- Search input -->
+                <div class="max-w-lg w-full lg:max-w-xs">
+                    <label for="search" class="sr-only">Rechercher</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <!--  <input id="search" [(ngModel)]="searchTerm" (input)="onSearch()" name="search" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Rechercher" type="search">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="flex min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md">
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="AdminHome" class="block p-2 hover:bg-gray-100 rounded">Home Page</a></li>
+
+                <li><a href="AdminService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Service</a></li>
+                <li><a href="listeOffre" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Offres</a></li>
+                <li><a href="listeOffre" class="block p-2 hover:bg-gray-100 rounded">Gestion Les Types De Services</a>
+                </li>
+                <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Offres</a></li>
+                <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des client</a></li>
+                <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Prestataires</a></li>
+                <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Reclamations</a></li>
+
+
+                <li>
+                    <button (click)="logout()" class="flex items-center p-2 hover:bg-gray-100 rounded">
+                        <i class="pi pi-sign-out"></i> Logout
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-------------------------------------------------------------------------------------------------->
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Liste des services</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th>Type de paiement</th>
+                        <th>Date de Creation</th>
+                        <th>Etat de Service</th>
+
+                        <th>Image de service</th>
+
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let service of modelService">
+                        <td>{{ service.titre }}</td>
+                        <td>{{ service.description }}</td>
+                        <td>{{ service.prix }}</td>
+                        <td>{{ service.typePaiement }}</td>
+                        <td>{{service.dateCreation}}</td>
+                        <td>{{service.etatService}}</td>
+
+
+
+                        <td>
+                            <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail"
+                                style="max-width: 100px;">
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary mr-2"
+                                (click)="modifierService(service.id)">Modifier</button>
+                            <button class="btn btn-sm btn-danger"
+                                (click)="onDeleteService(service.id)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

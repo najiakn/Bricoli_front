@@ -31,7 +31,7 @@ import { AdminModifierClientComponent } from './adminSection/admin-modifier-clie
 
 const routes: Routes = [
   //  { path: '', redirectTo: "/login", pathMatch: 'full' },
-  { path: '', redirectTo: "/home", pathMatch: 'full' },
+  { path: '', redirectTo: "/Accueil", pathMatch: 'full' },
 
   { path: "login", component: LoginComponent },
   { path: 'register', component: RegisterComponent },

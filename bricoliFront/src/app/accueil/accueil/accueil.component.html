@@ -1,4 +1,92 @@
 <!--========== SCROLL TOP ==========-->
+<style>
+    /* Section title styling */
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+
+    /* Container for accessories */
+    .accessory__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        justify-items: center;
+    }
+
+    /* Styling for individual accessory cards */
+    .accessory__content {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .accessory__content:hover {
+        transform: translateY(-10px);
+    }
+
+    /* Styling for images inside the cards */
+    .accessory__img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    /* Title of the accessory */
+    .accessory__title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    /* Category of the accessory */
+    .accessory__category {
+        display: block;
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Price information for the accessory */
+    .accessory__preci {
+        display: block;
+        font-size: 1.2rem;
+        color: #e67e22;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    /* Button styling */
+    .button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: #e67e22;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #d35400;
+    }
+
+    /* Icon inside the button */
+    .button i {
+        margin-left: 0.5rem;
+    }
+</style>
 <a href="#" class="scrolltop" id="scroll-top">
     <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
 </a>
@@ -110,42 +198,64 @@
 
         <div class="accessory__container bd-grid">
             <div class="accessory__content">
-                <img src="assets/img/accessory1.png" alt="" class="accessory__img">
-                <h3 class="accessory__title">Snow Globe</h3>
-                <span class="accessory__category">Accessory</span>
-                <span class="accessory__preci">$9.45</span>
+                <img src="assets/img/bricol8.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Rabat</h3>
+                <span class="accessory__category">chauffeur</span>
+                <span class="accessory__preci">09DH => 1Km</span>
                 <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
             </div>
 
             <div class="accessory__content">
-                <img src="assets/img/accessory2.png" alt="" class="accessory__img">
-                <h3 class="accessory__title">Candy</h3>
-                <span class="accessory__category">Accessory</span>
-                <span class="accessory__preci">$2.52</span>
+                <img src="assets/img/bricoli9.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Beni Mellal</h3>
+                <span class="accessory__category">jardinier</span>
+                <span class="accessory__preci">50DH => 1m²</span>
                 <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
             </div>
 
             <div class="accessory__content">
-                <img src="assets/img/accessory3.png" alt="" class="accessory__img">
-                <h3 class="accessory__title">Angel</h3>
-                <span class="accessory__category">Accessory</span>
-                <span class="accessory__preci">$13.15</span>
+                <img src="assets/img/bricoli10.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Salé </h3>
+                <span class="accessory__category">plombier </span>
+                <span class="accessory__preci">100DH => 1H</span>
                 <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
             </div>
 
             <div class="accessory__content">
-                <img src="assets/img/accessory4.png" alt="" class="accessory__img">
-                <h3 class="accessory__title">Sphere</h3>
-                <span class="accessory__category">Accessory</span>
-                <span class="accessory__preci">$4.25</span>
+                <img src="assets/img/bricoli11.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Casa</h3>
+                <span class="accessory__category">tailleur</span>
+                <span class="accessory__preci">150DH = > 1h</span>
                 <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
             </div>
 
             <div class="accessory__content">
-                <img src="assets/img/accessory5.png" alt="" class="accessory__img">
-                <h3 class="accessory__title">Surprise gift</h3>
-                <span class="accessory__category">Accessory</span>
-                <span class="accessory__preci">$7.99</span>
+                <img src="assets/img/bricoli12.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Rabat</h3>
+                <span class="accessory__category">femme de menage</span>
+                <span class="accessory__preci">120DH => 1h</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+
+            <div class="accessory__content">
+                <img src="assets/img/bricoli13.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Rabat</h3>
+                <span class="accessory__category">menuisier</span>
+                <span class="accessory__preci">120DH => 1h</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+            <div class="accessory__content">
+                <img src="assets/img/bricoli14.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Bejaad</h3>
+                <span class="accessory__category">sodeur</span>
+                <span class="accessory__preci">120DH => 1h</span>
+                <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+            </div>
+            <div class="accessory__content">
+                <img src="assets/img/bricoli15.jpg" alt="" class="accessory__img">
+                <h3 class="accessory__title">Sale</h3>
+                <span class="accessory__category">coiffeur</span>
+                <span class="accessory__preci">100DH</span>
                 <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
             </div>
         </div>

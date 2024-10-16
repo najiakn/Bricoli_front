@@ -1,5 +1,68 @@
 <!--========== SCROLL TOP ==========-->
 <style>
+    .send {
+        padding: 4rem 0;
+        background-color: #f5f5f5;
+        /* Light background to make the section stand out */
+    }
+
+    .send__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    /* Styling for the content part (text) */
+    .send__content {
+        flex: 1 1 50%;
+        text-align: left;
+        max-width: 500px;
+    }
+
+    .send__title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .send__description {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        text-align: justify;
+    }
+
+    /* Styling for the image */
+    .send__img {
+        flex: 1 1 45%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .send__img img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media screen and (max-width: 768px) {
+        .send__container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .send__img img {
+            width: 90%;
+        }
+    }
+
     /* Section title styling */
     .section-title {
         font-size: 2rem;
@@ -265,19 +328,21 @@
     <section class="send section">
         <div class="send__container bd-container bd-grid">
             <div class="send__content">
-                <h2 class="section-title-center send__title">Send Gift Now</h2>
-                <p class="send__description">Start giving away before the holidays are over. Write the home address of
-                    the person who will send the gift.</p>
-                <form action="">
-                    <div class="send__direction">
-                        <input type="text" placeholder="House address" class="send__input">
-                        <a href="#" class="button">Send</a>
-                    </div>
-                </form>
+                <h2 class="section-title-center send__title">Bricoli : La solution pour tous vos besoins !</h2>
+                <p class="send__description"><br><br>
+                    Bricoli est l’application qui révolutionne la rencontre entre prestataires qualifiés et clients à la
+                    recherche de services de qualité. Que vous ayez besoin d'un plombier, d'un jardinier, d'une femme de
+                    ménage ou d'un cuisinier, Bricoli vous permet de trouver facilement le professionnel idéal pour
+                    répondre à vos attentes.<br><br>
+                    Notre plateforme rassemble des prestataires compétents et fiables, prêts à vous offrir leurs
+                    services au meilleur prix, le tout en quelques clics. Plus besoin de chercher longtemps ou de vous
+                    inquiéter de la qualité du travail. Avec Bricoli, vous avez accès à une large gamme de services
+                    partout au Maroc, où que vous soyez.
+                </p>
             </div>
 
             <div class="send__img">
-                <img src="assets/img/send.png" alt="">
+                <img src="assets/img/bricol19.jpg" alt="Bricoli services">
             </div>
         </div>
     </section>
@@ -288,38 +353,38 @@
     <div class="footer__container bd-container bd-grid">
         <div class="footer__content">
             <h3 class="footer__title">
-                <a href="#" class="footer__logo">Christmas Gift</a>
+                <a href="#" class="footer__logo">Bricoli Services</a>
             </h3>
-            <p class="footer__description">I sent a gift and it gives <br> happiness</p>
+            <p class="footer__description">Trouvez le bon prestataire pour vos <br> travaux et services</p>
         </div>
 
         <div class="footer__content">
-            <h3 class="footer__title">Our Services</h3>
+            <h3 class="footer__title">Nos Services</h3>
             <ul>
-                <li><a href="#" class="footer__link">Pricing </a></li>
-                <li><a href="#" class="footer__link">Discounts</a></li>
-                <li><a href="#" class="footer__link">Shipping mode</a></li>
+                <li><a href="#" class="footer__link">Tarification</a></li>
+                <li><a href="#" class="footer__link">Offres spéciales</a></li>
+                <li><a href="#" class="footer__link">Modes d'intervention</a></li>
             </ul>
         </div>
 
         <div class="footer__content">
-            <h3 class="footer__title">Our Company</h3>
+            <h3 class="footer__title">Notre Entreprise</h3>
             <ul>
                 <li><a href="#" class="footer__link">Blog</a></li>
-                <li><a href="#" class="footer__link">About us</a></li>
-                <li><a href="#" class="footer__link">Our mision</a></li>
+                <li><a href="#" class="footer__link">À propos de nous</a></li>
+                <li><a href="#" class="footer__link">Notre mission</a></li>
             </ul>
         </div>
 
         <div class="footer__content">
-            <h3 class="footer__title">Social</h3>
-            <a href="#" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
+            <h3 class="footer__title">Réseaux Sociaux</h3>
+            <a href="#" class="footer__social"><i class='bx bxl-facebook-circle'></i></a>
             <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
             <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
         </div>
     </div>
 
-    <p class="footer__copy">&#169; 2021 Bedimcode. All right reserved</p>
+    <p class="footer__copy">&#169; 2024 Bricoli. Tous droits réservés.</p>
 </footer>
 
 <!--========== SCROLL REVEAL ==========-->

@@ -18,10 +18,16 @@ export class ClientServiceService {
   constructor(private http: HttpClient) { }
 
 
-  allClients(): Observable<ModelService[]> {
+  allClients(): Observable<Client[]> {
     const headers = this.createAuthorizationHeader();
-    return this.http.get<ModelService[]>(`${this.apiUrl}/all`, { headers: headers || {} });
+    return this.http.get<Client[]>(`${this.apiUrl}`, { headers: headers || {} });
   }
+
+  getClientId(id: number,): Observable<Client[]> {
+    const headers = this.createAuthorizationHeader();
+    return this.http.get<Client[]>(`${this.apiUrl}/${id}`, { headers: headers || {} });
+  }
+
 
   getMyInfos(): Observable<Client[]> {
     const headers = this.createAuthorizationHeader();
@@ -62,6 +68,9 @@ export class ClientServiceService {
     const headers = this.createAuthorizationHeader();
     return this.http.put<Client>(`${this.apiUrl}/${id}`, client, { headers: headers || {} });
   }
+
+  
+
 
 
 

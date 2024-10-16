@@ -1,5 +1,5 @@
-<p>admin-service works!</p>
-<p>list-service works!</p>
+<p>admin-modifier-client works!</p>
+<p>client-compte works!</p>
 <!-- Navbar -->
 <nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,8 @@
 
                 <li><a href="AdminService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Service</a></li>
                 <li><a href="AdminOffre" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Offres</a></li>
-
+                <li><a href="listeOffre" class="block p-2 hover:bg-gray-100 rounded">Gestion Les Types De Services</a>
+                </li>
                 <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Offres</a></li>
                 <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des client</a></li>
                 <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Gestion Des Prestataires</a></li>
@@ -57,38 +58,34 @@
             <table class="table table-striped table-bordered">
                 <thead class="bg-primary text-white">
                     <tr>
-                        <th>Titre</th>
-                        <th>Description</th>
-                        <th>Prix</th>
-                        <th>Type de paiement</th>
-                        <th>Date de Creation</th>
-                        <th>Etat de Service</th>
-
-                        <th>Image de service</th>
-
+                        <th>nom</th>
+                        <th>Prenom</th>
+                        <th>Age</th>
+                        <th>Genre </th>
+                        <th>Telephone </th>
+                        <th>Ville </th>
+                        <th>Cnie</th>
                         <th>Operations</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let service of modelService">
-                        <td>{{ service.titre }}</td>
-                        <td>{{ service.description }}</td>
-                        <td>{{ service.prix }}</td>
-                        <td>{{ service.typePaiement }}</td>
-                        <td>{{service.dateCreation}}</td>
-                        <td>{{service.etatService}}</td>
+                    <tr *ngFor="let cl of client">
+                        <td>{{ cl.nom }}</td>
+                        <td>{{ cl.prenom }}</td>
+                        <td>{{ cl.age }}</td>
+                        <td>{{ cl.genre }}</td>
+                        <td>{{ cl.telephone }}</td>
+                        <td>{{ cl.ville }}</td>
+                        <td>{{ cl.cnie }}</td>
 
 
 
-                        <td>
-                            <img [src]="service.imageUrl" alt="Service Image" class="img-thumbnail"
-                                style="max-width: 100px;">
-                        </td>
+
                         <td>
                             <button class="btn btn-sm btn-primary mr-2"
-                                (click)="modifierService(service.id)">Modifier</button>
-                            <button class="btn btn-sm btn-danger"
-                                (click)="onDeleteService(service.id)">Supprimer</button>
+                                (click)="modifierclient(cl.id)">Modifier</button>
+                            <button class="btn btn-sm btn-danger">Supprimer</button>
                         </td>
                     </tr>
                 </tbody>

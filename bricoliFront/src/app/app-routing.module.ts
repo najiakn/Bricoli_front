@@ -22,6 +22,7 @@ import { ClientCompteComponent } from './clientSection/client-compte/client-comp
 import { ModifierClientComponent } from './clientSection/modifier-client/modifier-client/modifier-client.component';
 import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
 import { AdminModifierServiceComponent } from './adminSection/admin-modifier-service/admin-modifier-service/admin-modifier-service.component';
+import { AdminOffreComponent } from './adminSection/admin-offre/admin-offre/admin-offre.component';
 
 
 
@@ -57,6 +58,8 @@ const routes: Routes = [
   { path: 'ModifierCompte/:id', component: ModifierCompteComponent },
 
   { path: 'AdminModifierService/:id', component: AdminModifierServiceComponent },
+  { path: 'AdminOffre', component: AdminOffreComponent },
+
 
 
 

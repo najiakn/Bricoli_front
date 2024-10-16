@@ -1,10 +1,23 @@
 <!-- Navbar -->
+<style>
+  a {
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #e0e0e0;
+    /* Changez la couleur d'arrière-plan lors du survol */
+    border-color: #aaa;
+    /* Changez la couleur de la bordure lors du survol */
+  }
+</style>
 <nav class="bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
         <!-- Logo -->
-        <img class="h-8 w-auto" src="/assets/imgs/logo.png" alt="Bricoli Logo">
+        <img class="h-8 w-auto" src="/assets/img/logo.jpg" alt="Bricoli Logo">
       </div>
       <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
         <!-- Search input -->
@@ -22,20 +35,33 @@
   </div>
 </nav>
 
-<div class="flex min-h-screen bg-gray-100">
+<div class="flex min-h-screen bg-gray-100" style="background-color: rgb(255, 255, 255);">
   <!-- Sidebar -->
   <aside class="w-64 bg-white shadow-md">
-    <nav class="p-4">
-      <ul class="space-y-2">
-        <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">Opportinites de prestation</a></li>
-
-        <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Offres de Demande</a></li>
-        <li><a href="lancerService" class="block p-2 hover:bg-gray-100 rounded">Lancer un Service</a></li>
-        <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Services Offerts</a></li>
-        <li><a href="ComptePres" class="block p-2 hover:bg-gray-100 rounded">Mon Compte</a></li>
+    <nav class="p-4" style="margin-top:80px;text-decoration: none;">
+      <ul class="space-y-2" style="text-decoration: none;">
+        <li><a href="home" class="block p-2 hover:bg-gray-100 rounded"
+            style="text-decoration: none;color: black;">Opportinites de
+            prestation</a></li>
+        <br>
+        <li><a href="#" class="block p-2 hover:bg-gray-100 rounded" style="text-decoration: none;color: black;">Offres
+            de Demande</a>
+        </li>
+        <br>
+        <li><a href="lancerService" class="block p-2 hover:bg-gray-100 rounded"
+            style="text-decoration: none;color: rgb(0, 0, 0);">Lancer un
+            Service</a></li>
+        <br>
+        <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded"
+            style="text-decoration: none;color: black;">Services
+            Offerts</a></li>
+        <br>
+        <li><a href="ComptePres" class="block p-2 hover:bg-gray-100 rounded"
+            style="text-decoration: none;color: black;">Mon
+            Compte</a></li>
         <li>
           <button (click)="logout()" class="flex items-center p-2 hover:bg-gray-100 rounded">
-            <i class="pi pi-sign-out"></i> Logout
+            <i class="pi pi-sign-out" style="text-decoration: none;color: black;background-color: red;"></i> Logout
           </button>
         </li>
       </ul>
@@ -51,10 +77,7 @@
         <H3 classe="titreService">{{modelservice.titre}}</H3>
         <p class="mb-4">{{ modelservice.description }}</p>
         <div class="flex justify-between">
-          <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 flex items-center">
-            <i class="fas fa-trash-alt mr-2"></i>
-            Supprimer
-          </button>
+
           <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 flex items-center">
             <i class="fas fa-check mr-2"></i>
             Confirmer

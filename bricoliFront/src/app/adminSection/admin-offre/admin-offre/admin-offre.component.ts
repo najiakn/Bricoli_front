@@ -50,7 +50,7 @@ export class AdminOffreComponent {
     }
   }
   modifierOffre(id: number): void {
-    this.router.navigate(['/ModifierOffre', id]); // Navigate to the modification form
+    this.router.navigate(['/AdminModifierOffre', id]); // Navigate to the modification form
   }
 
   logout() {

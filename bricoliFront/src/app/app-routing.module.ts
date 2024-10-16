@@ -23,6 +23,7 @@ import { ModifierClientComponent } from './clientSection/modifier-client/modifie
 import { AdminServiceComponent } from './adminSection/admin-service/admin-service/admin-service.component';
 import { AdminModifierServiceComponent } from './adminSection/admin-modifier-service/admin-modifier-service/admin-modifier-service.component';
 import { AdminOffreComponent } from './adminSection/admin-offre/admin-offre/admin-offre.component';
+import { AdminModifierOffreComponent } from './adminSection/admin-modifier-offre/admin-modifier-offre/admin-modifier-offre.component';
 
 
 
@@ -59,6 +60,8 @@ const routes: Routes = [
 
   { path: 'AdminModifierService/:id', component: AdminModifierServiceComponent },
   { path: 'AdminOffre', component: AdminOffreComponent },
+  { path: 'AdminModifierOffre/:id', component: AdminModifierOffreComponent },
+
 
 
 

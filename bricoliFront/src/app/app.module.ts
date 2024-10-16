@@ -27,8 +27,8 @@ import { ModifierCompteComponent } from './home/home/modifier-compte/modifier-co
 import { ClientCompteComponent } from './clientSection/client-compte/client-compte.component';
 import { ModifierClientComponent } from './clientSection/modifier-client/modifier-client/modifier-client.component';
 import { AdminModifierServiceComponent } from './adminSection/admin-modifier-service/admin-modifier-service/admin-modifier-service.component';
-import { AdminModifierClientComponent } from './adminSection/admin-modifier-client/admin-modifier-client/admin-modifier-client.component';
 import { AdminOffreComponent } from './adminSection/admin-offre/admin-offre/admin-offre.component';
+import { AdminModifierOffreComponent } from './adminSection/admin-modifier-offre/admin-modifier-offre/admin-modifier-offre.component';
 
 @NgModule({
   declarations: [
@@ -55,8 +55,9 @@ import { AdminOffreComponent } from './adminSection/admin-offre/admin-offre/admi
     ClientCompteComponent,
     ModifierClientComponent,
     AdminModifierServiceComponent,
-    AdminModifierClientComponent,
+    
     AdminOffreComponent,
+          AdminModifierOffreComponent,
 
 
     // ListServiceComponent, // Uncomment and import it if you have this component

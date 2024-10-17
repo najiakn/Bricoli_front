@@ -1,86 +1,129 @@
-<!-- Navbar -->
-<nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex-shrink-0 flex items-center">
-          <!-- Logo -->
-          <img class="h-8 w-auto" src="/assets/imgs/logo.png" alt="Bricoli Logo">
-        </div>
-        <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-          <!-- Search input -->
-          <div class="max-w-lg w-full lg:max-w-xs">
-            <label for="search" class="sr-only">Rechercher</label>
-            <div class="relative">
-              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <i class="fas fa-search text-gray-400"></i>
-              </div>
+<!-- Navbar -->!-- Navbar -->
+<style>
+  a {
+    font-size: 17px;
+    font-weight: bold;
+  }
 
-            <!--  <input id="search" [(ngModel)]="searchTerm" (input)="onSearch()" name="search" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Rechercher" type="search">-->
-            </div>
-          </div>
-        </div>
-      </div>
+  button:hover {
+    background-color: #e0e0e0;
+    /* Changez la couleur d'arrière-plan lors du survol */
+    border-color: #aaa;
+    /* Changez la couleur de la bordure lors du survol */
+  }
+</style>
+<header class="l-header" id="header" style="background-color: #ffffff;">
+  <nav class="nav bd-container">
+    <a> <img src="assets/img/logo.jpg" style="width: 120px;height: 30px;" alt="">
+    </a>
+
+    <div class="nav__menu" id="nav-menu">
+
+      <ul class="nav__list">
+
+        <li class="nav__item"><a href="login" class="nav__link active-link">Devenir Prestataire</a></li>
+        <li class="nav__item"><a href="#share" class="nav__link">Share</a></li>
+        <li class="nav__item"><a href="#decoration" class="nav__link">Decorations</a></li>
+        <li class="nav__item"><a href="#accessory" class="nav__link">Accessory</a></li>
+
+        <li><i class='bx bx-toggle-left change-theme' id="theme-button"></i></li>
+      </ul>
+    </div>
+
+    <div class="nav__toggle" id="nav-toggle">
+      <i class='bx bx-grid-alt'></i>
     </div>
   </nav>
-  
-  <div class="flex min-h-screen bg-gray-100">
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-md">
-      <nav class="p-4">
-        <ul class="space-y-2">
-          <li><a href="home" class="block p-2 hover:bg-gray-100 rounded">Opportinites de prestation</a></li>
+</header>
+<br><br><br><br><br><br>
 
-        <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Offres de Demande</a></li>
-        <li><a href="lancerService" class="block p-2 hover:bg-gray-100 rounded">Lancer un Service</a></li>
-        <li><a href="listeService" class="block p-2 hover:bg-gray-100 rounded">Services Offerts</a></li>
-        <li><a href="ComptePres" class="block p-2 hover:bg-gray-100 rounded">Mon Compte</a></li>
+<div class="flex min-h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md border border-gray-200 rounded-lg">
+    <nav class="p-4 mt-20">
+      <ul class="space-y-4">
         <li>
-            <button (click)="logout()" class="flex items-center p-2 hover:bg-gray-100 rounded">
-              <i class="pi pi-sign-out"></i> Logout
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    <!-------------------------------------------------------------------------------------------->
-    <div class="container mx-auto p-4">
-      <h1 class="text-2xl font-bold mb-4 text-center">Lancer un Service</h1>
-      <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" class="space-y-4">
-        <div>
-          <label for="titre" class="block text-sm font-medium text-gray-700">Nom du service</label>
-          <input type="text" id="titre" formControlName="titre" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-        </div>
-        <div>
-          <label for="description" class="block text-sm font-medium text-gray-700">Description du service</label>
-          <textarea id="description" formControlName="description" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        </div>
-        <div>
-          <label for="typeServices" class="block text-sm font-medium text-gray-700">Type de service</label>
-          <select id="typeServices" formControlName="idType" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-            <option *ngFor="let type of typeServices" [value]="type.id">{{ type.nomType }}</option>
-          </select>
-        </div>
-        <div>
-          <label for="prix" class="block text-sm font-medium text-gray-700">Prix de service</label>
-          <input type="number" id="prix" formControlName="prix" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-        </div>
-        <div>
-          <label for="typePaiement" class="block text-sm font-medium text-gray-700">Type de paiement</label>
-          <select id="typePaiement" formControlName="typePaiement" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-            <option *ngFor="let type of typePaiements" [value]="type">{{ type }}</option>
-          </select>
-        </div>
-        <div>
-          <label for="imageUrl" class="block text-sm font-medium text-gray-700">Image de service</label>
-          <input type="file" id="imageUrl" (change)="onFileSelected($event,'imageUrl')"  class="mt-1 block w-full">
-        </div>
-        <div class="flex justify-between">
-          <button type="button" (click)="onCancel()" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-            Abandonner
+          <a href="home"
+            class="block p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-300 transition duration-300 ease-in-out text-black">
+            Opportunités de prestation
+          </a>
+        </li>
+
+        <li>
+          <a href="lancerService"
+            class="block p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-300 transition duration-300 ease-in-out text-black">
+            Lancer un Service
+          </a>
+        </li>
+        <li>
+          <a href="listeService"
+            class="block p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-300 transition duration-300 ease-in-out text-black">
+            Services Offerts
+          </a>
+        </li>
+        <li>
+          <a href="ComptePres"
+            class="block p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-300 transition duration-300 ease-in-out text-black">
+            Mon Compte
+          </a>
+        </li>
+        <li>
+          <button (click)="logout()"
+            class="flex items-center p-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 ease-in-out w-full">
+            <i class="pi pi-sign-out mr-2 text-white" style="font-size: 20px;"></i>
+            Logout
           </button>
-          <button type="submit" [disabled]="serviceForm.invalid" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-            Lancer un service
-          </button>
-        </div>
-      </form>
-    </div>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-------------------------------------------------------------------------------------------->
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Lancer un Service</h1>
+    <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="titre" class="block text-sm font-medium text-gray-700">Nom du service</label>
+        <input type="text" id="titre" formControlName="titre"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="description" class="block text-sm font-medium text-gray-700">Description du service</label>
+        <textarea id="description" formControlName="description" rows="3"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+      </div>
+      <div>
+        <label for="typeServices" class="block text-sm font-medium text-gray-700">Type de service</label>
+        <select id="typeServices" formControlName="idType"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+          <option *ngFor="let type of typeServices" [value]="type.id">{{ type.nomType }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="prix" class="block text-sm font-medium text-gray-700">Prix de service</label>
+        <input type="number" id="prix" formControlName="prix"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+      </div>
+      <div>
+        <label for="typePaiement" class="block text-sm font-medium text-gray-700">Type de paiement</label>
+        <select id="typePaiement" formControlName="typePaiement"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+          <option *ngFor="let type of typePaiements" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="imageUrl" class="block text-sm font-medium text-gray-700">Image de service</label>
+        <input type="file" id="imageUrl" (change)="onFileSelected($event,'imageUrl')" class="mt-1 block w-full">
+      </div>
+      <div class="flex justify-between">
+        <button type="button" (click)="onCancel()"
+          class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+          Abandonner
+        </button>
+        <button type="submit" [disabled]="serviceForm.invalid"
+          class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          Lancer un service
+        </button>
+      </div>
+    </form>
+  </div>

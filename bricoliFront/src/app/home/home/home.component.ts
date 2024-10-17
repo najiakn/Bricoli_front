@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   logout() {
     this.serviceModelservice.logout();
     // Optional: redirect to the login page or refresh the app
-    window.location.reload(); // or use Angular Router
+    this.router.navigate(['/Accueil']);
   }
 
 
